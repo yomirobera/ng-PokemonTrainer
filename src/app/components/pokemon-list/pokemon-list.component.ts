@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 
 @Component({
@@ -14,7 +14,11 @@ export class PokemonListComponent implements OnInit{
   constructor() { }
 
   ngOnInit(): void {
-
+    console.log(this.pokemons)
   }
+
+
+
+
 
 }
