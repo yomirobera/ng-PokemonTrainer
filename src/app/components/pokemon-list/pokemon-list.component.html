@@ -1,6 +1,13 @@
 <ul>
     <li *ngFor="let pokemon of pokemons">
-        <span>{{ pokemon.name }} Url {{ pokemon.url }}</span>
-    </li>
+        <fieldset class="border border-slate-300 p-2 rounded w-full mb-3">
+            <span>
+                {{ pokemon.name }} <br/>
+                <img [src]="getPokemonImageUrl(pokemon.url)" alt="{{ pokemon.name }}" />
+            </span>
+            
+        </fieldset>
+        
+</li>
 </ul>
 <p>test</p>
