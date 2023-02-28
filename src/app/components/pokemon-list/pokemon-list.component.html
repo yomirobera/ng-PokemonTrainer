@@ -1,6 +1,7 @@
+<h1>Pokemon collections</h1>
 <ul>
-    <li *ngFor="let pokemon of pokemons">
-        <span>{{ pokemon.name }} Url {{ pokemon.url }}</span>
-    </li>
+    <app-pokemon-list-item 
+        *ngFor="let pokemon of pokemons"
+        [pokemon]='pokemon'>
+    </app-pokemon-list-item>
 </ul>
-<p>test</p>
