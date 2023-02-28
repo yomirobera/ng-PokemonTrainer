@@ -1,7 +1,11 @@
 <h1>Pokemon collections</h1>
-<ul>
+<ul> 
+    
     <li *ngFor="let pokemon of pokemons">
-        <fieldset class="border border-slate-300 p-2 rounded w-full mb-3">
+        <fieldset class="border border-slate-300 p-2 rounded w-full mb-3 relative">
+            <app-collect-button [pokemonName]="pokemon.name">
+        
+            </app-collect-button> 
             <span>
                 {{ pokemon.name }} <br/>
                 <img [src]="getPokemonImageUrl(pokemon.url)" alt="{{ pokemon.name }}" />
@@ -9,5 +13,5 @@
             
         </fieldset>
         
-</li>
+    </li>
 </ul>
