@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Pokemon, PokeResult } from '../models/pokemon.model';
-import { finalize, tap } from 'rxjs';
+import { Pokemon, PokeResults } from '../models/pokemon.model';
+import { finalize, tap} from 'rxjs';
 
 const { apiPokemons } = environment;
 
@@ -28,20 +28,29 @@ export class PokemonCatalogueService {
     return this._loading;
   }
 
+  public extractID(url: string): number {
+    const urlArray = url.split('/');
+    return +urlArray[urlArray.length - 2];
+  }
 
-  constructor(private readonly http: HttpClient) { }
+
+  constructor(
+    private readonly http: HttpClient) { }
+
+
 
   public findAllPokemons(): void {
     this._loading = true;
-    this.http.get<PokeResult>(apiPokemons)
+    this.http.get<PokeResults>(`${apiPokemons}?limit=151`)
     .pipe(
+      tap(result=>console.log(result.results)),
       tap(result=>console.log(result.results)),
       finalize(() => {
           this._loading = false;
       })
     )
       .subscribe({
-        next: (pokemons: PokeResult) => {
+        next: (pokemons: PokeResults) => {
           this._pokemons = pokemons.results;
         },
         error: (error: HttpErrorResponse) => {
