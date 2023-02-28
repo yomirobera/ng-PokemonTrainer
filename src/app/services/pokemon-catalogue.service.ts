@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Pokemon, PokeResults, PokeResult } from '../models/pokemon.model';
-import { finalize, tap, tap } from 'rxjs';
+import { Pokemon, PokeResults } from '../models/pokemon.model';
+import { finalize, tap} from 'rxjs';
 
 const { apiPokemons } = environment;
 
