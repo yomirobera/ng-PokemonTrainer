@@ -16,7 +16,6 @@ export class LoginFormComponent  {
 
   @Output() login: EventEmitter<void> = new EventEmitter();
 
-  //DI
   constructor(
     private readonly loginService: LoginService,
     private readonly userService: UserService,

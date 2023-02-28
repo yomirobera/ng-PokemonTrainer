@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Pokemon, PokeResults } from '../models/pokemon.model';
-import { finalize, tap } from 'rxjs';
+import { Pokemon, PokeResults, PokeResult } from '../models/pokemon.model';
+import { finalize, tap, tap } from 'rxjs';
 
 const { apiPokemons } = environment;
 
@@ -12,7 +12,7 @@ const { apiPokemons } = environment;
 export class PokemonCatalogueService {
 
   private _pokemons: Pokemon[] = [];
-  private _error:string ="";
+  private _error: string ="";
   private _loading: boolean = false;
 
 
@@ -43,6 +43,7 @@ export class PokemonCatalogueService {
     this._loading = true;
     this.http.get<PokeResults>(`${apiPokemons}?limit=151`)
     .pipe(
+      tap(result=>console.log(result.results)),
       tap(result=>console.log(result.results)),
       finalize(() => {
           this._loading = false;
