@@ -2,13 +2,16 @@
 <ul> 
     
     <li *ngFor="let pokemon of pokemons">
-        <fieldset class="border border-slate-300 p-2 rounded w-full mb-3 bg-blue-300">
+        <fieldset class="border border-slate-300 p-2 rounded w-full mb-3 relative bg-blue-300">
             <span class="border border-slate-300 p-1 rounded w-full mb-2 bg-white">
                 {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.substr(1) }} <br/>
             </span>
             <span>
                 <img [src]="getPokemonImageUrl(pokemon.url)" alt="{{ pokemon.name }}" />
             </span>
+            <app-collect-button [pokemonName]="pokemon.name">
+        
+            </app-collect-button> 
                 
             
             
