@@ -40,6 +40,11 @@ export class PokemonCatalogueService {
 
 
   public findAllPokemons(): void {
+  
+    if (this._pokemons.length > 0) {
+      return;
+    }
+
     this._loading = true;
     this.http.get<PokeResults>(`${apiPokemons}?limit=151`)
     .pipe(
@@ -57,5 +62,9 @@ export class PokemonCatalogueService {
           this._error = error.message;
         }
       })
+  }
+
+  public pokemonByName(name:string): Pokemon | undefined {
+    return this._pokemons?.find((pokemon: Pokemon) => pokemon.name === name);
   }
 }

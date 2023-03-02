@@ -1,7 +1,24 @@
-<aside class="absolute top-4 right-4">
+<aside class="absolute top-4 right-4 bounce">
     <button
     (click)="onCollectClick()"
-     class="border border-slate-300 rounded flex justify-center items-center p-10 text-yellow-500">
-        <span class="material-icons">sports_baseball</span>
+     class="border border-slate-300 rounded flex justify-center items-center p-10 text-red-500 ">
+
+    <ng-container *ngIf="!loading; else spinner">
+
+        <ng-container *ngIf="isCaught; then Caught else notCaught" class="material-icons"></ng-container>
+
+        <ng-template #Caught>
+            <span class="text-green-600">You have this pokemon</span>
+        </ng-template>
+
+        <ng-template #notCaught>
+            <img src="./assets/pokeball.png" alt="pokeball image" width="30" height="30"/>
+        </ng-template>
+    </ng-container>
+
+    <ng-template #spinner>
+        <span class="material-icons animate-spin">refresh</span>
+    </ng-template> 
+
     </button>
 </aside>
