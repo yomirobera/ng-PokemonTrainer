@@ -20,6 +20,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  logout(): void{
+    this.userService.logOut();
+  }
 
 
 }

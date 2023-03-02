@@ -32,15 +32,22 @@ export class UserService {
 
     return false
   }
+  //collect pokemons
   public addToCaught(pokemon: Pokemon): void {
     if (this._user) {
       this._user.pokemon.push(pokemon);
     }
   }
-
+  
+  //Remove caught pokemons
   public removeFromCaught(name: string): void {
     if (this._user) {
       this._user.pokemon = this._user.pokemon.filter((pokemon: Pokemon) => pokemon.name !==name)
     }
+  }
+  //Logout user
+  public logOut(): void {
+    sessionStorage.clear();
+    this.user=undefined;
   }
 }
