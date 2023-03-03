@@ -8,8 +8,10 @@ The repository includes a Pokémon Trainer web app using the Angular Framework. 
 - Pokemon catalouge page – This page displays the user all of the pokemons he/she caught. There is also a remove pokemons button to remove the pokemon from users collection. 
 The page also has a logout function, displyed in the navigation bar after they user has logged in.
 
+## Author
 
-
+- [@Yomiyu](https://github.com/yomirobera)
+- [@William](https://github.com/William-vil)
 
 ## Development server
 
