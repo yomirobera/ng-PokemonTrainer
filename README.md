@@ -1,6 +1,17 @@
-# NgPokemonTrainer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+## Pokémon Trainer
+
+The repository includes a Pokémon Trainer web app using the Angular Framework. The purpose of the project is to build a dynamic webpage using the Angular framework. The application has the following webpages.
+- Landing page – This area is the first thing a user sees and enters a username to advance to the next pages. The usernames are stored in API. The browsers' sessions storage is used to mange user sessions.
+- Trainer page – This page is only displayed if the user is logged in. On this page, the user is able to see all of the Pokemons fetched from API. Each pokemons got a button and the user is able to collect pokemons by clicking on the button. 
+
+- Pokemon catalouge page – This page displays the user all of the pokemons he/she caught. There is also a remove pokemons button to remove the pokemon from users collection. 
+The page also has a logout function, displyed in the navigation bar after they user has logged in.
+
+## Author
+
+- [@Yomiyu](https://github.com/yomirobera)
+- [@William](https://github.com/William-vil)
 
 ## Development server
 
